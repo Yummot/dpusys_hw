@@ -2,7 +2,7 @@
 
 Author: Wentao Yu \<yu.wenta@husky.neu.edu\>
 
-This is the hardware repository for our EECE7368 2019 Fall project. We use the Xilinx DPU IP with a video pipeline and the PS to do an Deep learning application. The video pipline is used to capture data from a LI-IMX274MIPI-FMC board. the DPU IP is running in 325 MHz in our system.
+This is the repository for the ZCU102 hardware part of our EECE7368 2019 Fall project. We use the Xilinx DPU IP with a video pipeline and the PS to do an Deep learning application. The video pipline is used to capture data from a LI-IMX274MIPI-FMC board. the DPU IP is running at 325 MHz in our system. The PS part of this system runs our Deep Learning application on a customized Petalinux based embedded Linux, which are in serpated repositories.
 
 Currently, this repo only contains srcipts and other files which are used to create a project with a DPU configuration: B4096, 2 core (details can be found in the project directory after generating it). Additional scripts to generate the system HW project with different DPU configuration may be added when need. If more than one project generation scripts exists, the only difference between then is the configuration of the DPU IP when we do not specify the difference.
 
