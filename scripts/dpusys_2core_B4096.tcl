@@ -29,8 +29,8 @@ source $bd_scripts_path
 regenerate_bd_layout
 
 # create verilog wrapper
-make_wrapper -files [get_files $proj_name/$proj_name.srcs/sources_1/bd/sys/sys.bd] -top
-add_files -norecurse $proj_name/$proj_name.srcs/sources_1/bd/sys/hdl/sys_wrapper.v
+make_wrapper -files [get_files $proj_dir/$proj_name.srcs/sources_1/bd/sys/sys.bd] -top
+add_files -norecurse $proj_dir/$proj_name.srcs/sources_1/bd/sys/hdl/sys_wrapper.v
 
 add_files -fileset constrs_1 -norecurse $consts_dir/zcu102.xdc
 add_files -fileset constrs_1 -norecurse $consts_dir/misc.xdc
