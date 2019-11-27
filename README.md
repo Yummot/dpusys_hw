@@ -16,6 +16,8 @@ Currently, this repo only contains srcipts and other files which are used to cre
 - ZCU102 rev 1.0 board.
 - LI-IMX274MIPI-FMC board.
 
+**Note**: This project is built on a Ubuntu 18.04 LTS machine using Vivado 2019.1. You may need to adjust it for other build enviroments.
+
 ## Create the project
 
 Make sure the Vivado tools are in you `$PATH`. Then, use following command:
