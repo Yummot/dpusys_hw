@@ -24,3 +24,13 @@ update_ip_catalog
 # create bd
 source $scripts_dir/dpusys_2core_bd.tcl
 regenerate_bd_layout
+
+# create verilog wrapper
+make_wrapper -files [get_files $proj_name/$proj_name.srcs/sources_1/bd/sys/sys.bd] -top
+add_files -norecurse $proj_name/$proj_name.srcs/sources_1/bd/sys/hdl/sys_wrapper.v
+
+add_files -fileset constrs_1 -norecurse $consts_dir/zcu102.xdc
+add_files -fileset constrs_1 -norecurse $consts_dir/misc.xdc
+
+# set top module
+set_property top sys_wrapper [current_fileset]
