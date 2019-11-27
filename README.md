@@ -20,7 +20,7 @@ Currently, this repo only contains srcipts and other files which are used to cre
 
 ## Create the project
 
-Make sure the Vivado tools are in you `$PATH`. Then, use following command:
+Take our dpusys_2core_B4906 project as an example. Make sure the Vivado tools are in you `$PATH`. Then, use following command:
 
 ```shell
 # at the root dir of the cloned repo
@@ -28,6 +28,21 @@ vivado -mode batch -source scripts/dpusys_2core.tcl -quiet -notrace
 ```
 
 After the above command finishes, you will find a new directory name `dpusys_2core_B4906` in the `build` folder. This directory contains the new project. To open the project, change the current directory to `build/dpusys_2core_B4906`. Then, use command `vivado dpusys_2core_B4906.xpr &`. You may also use the Vivado GUI to open the new project.
+
+Here are the screenshots of what the created project's board design shoule look like:
+![example_2core_b4096_bd](./docs/images/2core_B4096_bd.png)
+
+Here is the details of `dpu_ss` in the above db:
+
+![example_2core_B4096_bd_dpu_ss](./docs/images/2core_B4096_bd_dpu_ss.png)
+
+Here is the details of the subsystem that capture the LI-IMX274MIPI-FMC board's output:
+
+![example_2core-B4096_bd_cam_ss](./docs/images/2core_B4096_bd_cam_ss.png)
+
+Here is the details of the video pipeline subsystem that processes the MIPI camera output:
+
+![exampe_2core_B4096_bd_v_proc_ss.png](./docs/images/2core_B4096_bd_v_proc_ss.png)
 
 ## Generate the bitstream
 Open the project with Vivado GUI.
