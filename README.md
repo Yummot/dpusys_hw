@@ -21,6 +21,7 @@ Currently, this repo only contains srcipts and other files which are used to cre
 Make sure the Vivado tools are in you `$PATH`. Then, use following command:
 
 ```shell
+# at the root dir of the cloned repo
 vivado -mode batch -source scripts/dpusys_2core.tcl -quiet
 ```
 
