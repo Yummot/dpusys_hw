@@ -6,7 +6,7 @@ set proj_name "dpusys_2core_B4096"
 set bd_postfix "_bd"
 set proj_bd_name "$proj_name$bd_postfix"
 
-set proj_dir $proj_name
+set proj_dir "build/$proj_name"
 set consts_dir "consts"
 set scripts_dir "scripts"
 set dpu_ip_dir "dpu_ip"
