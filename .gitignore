@@ -1,5 +1,5 @@
 *.log
 *.jou
-./dpusys/
+dpusys_*core_B[0-9]*/
 **/build/
 **/.Xil/

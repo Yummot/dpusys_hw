@@ -2,12 +2,15 @@ set ::platform "zcu102"
 set ::silicon "e"
 
 set part "xczu9eg-ffvb1156-2-${::silicon}"
-set proj_name "dpusys_2core"
+set proj_name "dpusys_2core_B4096"
+set bd_postfix "_bd"
+set proj_bd_name "$proj_name$bd_postfix"
 
 set proj_dir $proj_name
 set consts_dir "consts"
 set scripts_dir "scripts"
 set dpu_ip_dir "dpu_ip"
+set bd_scripts_path "$scripts_dir/$proj_bd_name.tcl"
 
 create_project $proj_name $proj_dir -part $part -force
 set_property board_part xilinx.com:zcu102:part0:3.3 [current_project]
@@ -22,7 +25,7 @@ set_property ip_repo_paths "$dpu_ip_dir" [current_project]
 update_ip_catalog
 
 # create bd
-source $scripts_dir/dpusys_2core_bd.tcl
+source $bd_scripts_path
 regenerate_bd_layout
 
 # create verilog wrapper
