@@ -22,7 +22,7 @@ Make sure the Vivado tools are in you `$PATH`. Then, use following command:
 
 ```shell
 # at the root dir of the cloned repo
-vivado -mode batch -source scripts/dpusys_2core.tcl -quiet
+vivado -mode batch -source scripts/dpusys_2core.tcl -quiet -notrace
 ```
 
 After the above command finishes, you will find a new directory name `dpusys_2core_B4906` in the `build` folder. This directory contains the new project. To open the project, change the current directory to `build/dpusys_2core_B4906`. Then, use command `vivado dpusys_2core_B4906.xpr &`. You may also use the Vivado GUI to open the new project.
