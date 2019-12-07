@@ -1,4 +1,4 @@
-ALL = dpusys_1core_B1152 dpusys_1core_B406 dpusys_2core_B1152 dpusys_2core_B4096
+ALL = dpusys_1core_B1152 dpusys_1core_B406 dpusys_2core_B1152 dpusys_2core_B4096 dpusys_1core_B2304 dpusys_1core_B1024
 
 IMPLS = $(addsuffix .impl, $(ALL))
 
@@ -14,8 +14,8 @@ all: $(ALL)
 dpusys_1core_B1152.impl: scripts/impl.tcl check-vivado
 	vivado -mode batch -source $< build/dpusys_1core_B1152/dpusys_1core_B1152.xpr -quiet -notrace
 
-dpusys_1core_B406.impl: scripts/impl.tcl check-vivado
-	vivado -mode batch -source $< build/dpusys_1core_B406/dpusys_1core_B406.xpr -quiet -notrace
+dpusys_1core_B4096.impl: scripts/impl.tcl check-vivado
+	vivado -mode batch -source $< build/dpusys_1core_B4096/dpusys_1core_B4096.xpr -quiet -notrace
 
 dpusys_2core_B1152.impl: scripts/impl.tcl check-vivado
 	vivado -mode batch -source $< build/dpusys_2core_B1152/dpusys_2core_B1152.xpr -quiet -notrace
@@ -27,7 +27,7 @@ dpusys_1core_B1152.bit: scripts/bit_stream.tcl check-vivado
 	vivado -mode batch -source $< build/dpusys_1core_B1152/dpusys_1core_B1152.xpr -quiet -notrace
 
 dpusys_1core_B4096.bit: scripts/bit_stream.tcl check-vivado
-	vivado -mode batch -source $< build/dpusys_1core_B406/dpusys_1core_B406.xpr -quiet -notrace
+	vivado -mode batch -source $< build/dpusys_1core_B4096/dpusys_1core_B4096.xpr -quiet -notrace
 
 dpusys_2core_B1152.bit: scripts/bit_stream.tcl check-vivado
 	vivado -mode batch -source $< build/dpusys_2core_B1152/dpusys_2core_B1152.xpr -quiet -notrace
