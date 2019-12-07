@@ -92,6 +92,8 @@ A build folder will be create if no exists. Then, all vivado project will be bui
 To implement a project:
 
 ```bash
+# make the project if no prev one
+# make make dpusys_<n>core_<arch_name>
 make dpusys_<n>core_<arch_name>.impl
 ```
 

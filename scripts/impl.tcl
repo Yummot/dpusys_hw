@@ -79,18 +79,18 @@ if {$complete} {
 # check if prev failed
 set status [get_property STATUS [get_runs impl_1]]
 set no_started [regexp $NO_STARTED $status matched]
-if {no_started != 0} {
+if {$no_started != 0} {
     set status [get_property STATUS [get_runs impl_1]]
     set has_error [regexp $ERR_RE $status matched]
     # reset to previous setp if a step of impl_1 failed
-    if {has_error == 1} {
+    if {$has_error == 1} {
         reset_runs impl_1 -prev_step
     }
 }
 
 
 if {$n_core == 1} {
-    launch_runs impl_1 -to_step $IMPL_LAST_STEP3
+    launch_runs impl_1 -to_step $IMPL_LAST_STEP
 } else {
     launch_runs impl_1 -to_step $IMPL_LAST_STEP -jobs 12
 }
