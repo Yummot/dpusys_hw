@@ -72,6 +72,37 @@ When the bitstream generation process is complete, do the following steps to exp
 1. Export the hardware platform to where you want to create the Petalinux project.
 1. Click OK.
 
+## Use prebuilt HSI
+
+This repo contains prebuilt HSI for ZCU102. These HSI can be used as hw description for building Petalinux project with command:
+```bash
+petalinux-config --get-hw-description path/to/hsi/
+```
+
+### Use Makefile to build the project
+
+This repo contains experimental Makefile for automatically building projects, implementing projects and generating bitstream. To build all projects:
+
+```bash
+make all
+```
+
+A build folder will be create if no exists. Then, all vivado project will be built. Then folder name for each project obey following pattern: dpusys_\<n\>core_\<arch_name\>, where n = 1|2, arch_name = B1024|B1152|B2304|B3096.
+
+To implement a project:
+
+```bash
+make dpusys_<n>core_<arch_name>.impl
+```
+
+Then, to create a bitstream for a project:
+
+```bash
+make dpusys_<n>core_<arch_name>.bit
+```
+
+**Note: You must do `make dpu_<n>core_<arch_name>.impl` before generating a bitstream. Implementation for a project may failed due to Vivado internal abnormal termination. In this case, you may just need to rerun the implementation step.**
+
 ## License
 
 All file except the files **dpu_ip** directory, is using the MIT license.
