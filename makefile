@@ -1,4 +1,4 @@
-ALL = dpusys_1core_B1152 dpusys_1core_B406 dpusys_2core_B1152 dpusys_2core_B4096 dpusys_1core_B2304 dpusys_1core_B1024
+ALL = dpusys_1core_B1152 dpusys_1core_B406 dpusys_2core_B1152 dpusys_2core_B4096 dpusys_1core_B1024 dpusys_1core_B2304
 
 IMPLS = $(addsuffix .impl, $(ALL))
 
