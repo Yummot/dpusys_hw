@@ -6,6 +6,7 @@ set NO_STARTED "Not started"
 set IMPL_LAST_STEP "route_design"
 set COMPLETE_RE {(route_design|write_bitstream)\s[cC]omplete}
 set OOC_COMPLETE_RE {[cC]omplete}
+set ERR_RE {ERROR}
 
 proc get_num_cores {} {
     global tcl_platform env
@@ -73,6 +74,18 @@ set complete [regexp $COMPLETE_RE $status matched]
 if {$complete} {
     puts "$current_project implementation finished"
     exit 0
+}
+
+# check if prev failed
+set status [get_property STATUS [get_runs impl_1]]
+set no_started [regexp $NO_STARTED $status matched]
+if {no_started != 0} {
+    set status [get_property STATUS [get_runs impl_1]]
+    set has_error [regexp $ERR_RE $status matched]
+    # reset to previous setp if a step of impl_1 failed
+    if {has_error == 1} {
+        reset_runs impl_1 -prev_step
+    }
 }
 
 
